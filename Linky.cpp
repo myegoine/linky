@@ -12,11 +12,14 @@ int initSerial() {
         printf("open_port: Unable to open /dev/ttyAMA0 - ");
     }
     else {
+        printf("fnctl starting\n");
         fcntl(fd, F_SETFL, 0);
+        printf("fnctl done\n");
     }
 
     //usleep(50000);
 
+    printf("Done Initiating serial\n");
     return fd;
 }
 
