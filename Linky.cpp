@@ -8,7 +8,7 @@
 // Open serial port on ttyAMA0
 int initSerial() {
     printf("Initiating serial\n");
-    int fd = open("/dev/ttyAMA0", O_RDWR | O_NOCTTY | O_NDELAY);
+    int fd = open("/dev/ttyACM0", O_RDWR | O_NOCTTY | O_NDELAY);
     if (fd == -1) {
         printf("open_port: Unable to open /dev/ttyAMA0 - ");
     }
