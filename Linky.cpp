@@ -38,5 +38,9 @@ int main() {
             printf("Error\n");
             return 0;
         }
+        if (frame.isEmpty()) {
+            printf("Empty\n");
+            return 0;
+        }
     }
 }
