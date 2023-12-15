@@ -33,7 +33,7 @@ int main() {
     Linky_Frame frame;
     char c;
     while (1) {
-        printf("Start reading\n";
+        printf("Start reading\n");
         ssize_t bytesRead =  read(serial, &c, 1);
         printf("Read %d bytes\n", bytesRead);
         frame.addByte(c);
