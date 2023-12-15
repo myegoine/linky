@@ -34,6 +34,7 @@ int main() {
     char c;
     while (1) {
         c = read(serial, &c, 1);
+        printf("%c", c);
         frame.addByte(c);
         if (frame.isComplete()) {
             break;
