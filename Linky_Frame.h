@@ -11,6 +11,7 @@ class Linky_Frame
     void init();
     bool isComplete();
     bool isError();
+    bool isEmpty();
     void addByte(char byte);
     char *getFrame();
 
