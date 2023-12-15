@@ -3,6 +3,7 @@
 #include <fcntl.h>
 #include <stdio.h>
 #include <unistd.h>
+#include <termios.h>
 
 // Open serial port on ttyAMA0
 int initSerial() {
@@ -12,12 +13,18 @@ int initSerial() {
         printf("open_port: Unable to open /dev/ttyAMA0 - ");
     }
     else {
-        printf("fnctl starting\n");
         fcntl(fd, F_SETFL, 0);
-        printf("fnctl done\n");
+
+        struct termios options;
+        tcgetattr(fd, &options);
+
+        cfsetispeed(&options, B9600);
+        cfsetospeed(&options, B9600);
+
+        tcsetattr(fd, TCSANOW, &options);
     }
 
-    //usleep(50000);
+    usleep(50000);
 
     printf("Done Initiating serial\n");
     return fd;
