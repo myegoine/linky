@@ -7,10 +7,10 @@ CXX = g++
 CXXFLAGS = -Wall -std=c++11
 
 # Target executable name
-TARGET = Linky
+TARGET = linky
 
 # Source files
-SRCS = Linky.cpp
+SRCS = Linky.cpp Linky_Frame.cpp
 
 # Object files
 OBJS = $(SRCS:.cpp=.o)
@@ -18,10 +18,7 @@ OBJS = $(SRCS:.cpp=.o)
 all: $(TARGET)
 
 $(TARGET): $(OBJS)
-    $(CXX) $(CXXFLAGS) -o $(TARGET) $(OBJS)
+	$(CXX) $(CXXFLAGS) -o $(TARGET) $(OBJS)
 
 .cpp.o:
-    $(CXX) $(CXXFLAGS) -c $<  -o $@
-
-clean:
-    $(RM) $(OBJS) $(TARGET)
+	$(CXX) $(CXXFLAGS) -c $<  -o $@

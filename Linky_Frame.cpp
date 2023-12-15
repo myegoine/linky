@@ -1,3 +1,6 @@
+#include "Linky_Frame.h"
+#include <cstring>
+
 Linky_Frame::Linky_Frame() {
     init();
 }
@@ -12,7 +15,7 @@ bool Linky_Frame::isComplete() {
 }
 
 bool Linky_Frame::isError() {
-  return (_size > 0 && _frame[_size - 1] == EOT || _size == BUFFER_SIZE);
+  return ((_size > 0 && _frame[_size - 1] == EOT) || _size == BUFFER_SIZE);
 }
 
 void Linky_Frame::addByte(char byte) {
